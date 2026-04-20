@@ -1,28 +1,43 @@
-# Project Title
+# STAT 184: Reproducible Analysis with Quarto
 
-Write a 1-2 sentences that quickly and clearly convey what your repo is for.
+A reproducible data analysis report built with Quarto covering post-pandemic airport 
+traffic recovery, Monte Carlo integration, and GenAI prompting strategies.
 
-## Overview
+## About This Project
 
-Expand on those introductory sentences with a brief but informative description of your project's purpose and goals. This section should help visitors decide whether they should dig deeper into your repo/project.
+This repo contains the work from HW 4.3 for STAT 184 at Penn State. The report demonstrates 
+reproducible data analysis using Quarto and R across three sections: an analysis of 
+passenger traffic recovery at six major international airports from 2020–2024, a Monte 
+Carlo numerical integration of the Weibull probability density function, and a 
+comparison of plan-based vs. generic GenAI prompting to produce data visualizations. 
 
-### Interesting Insight (Optional)
+## Data Sources
 
-This is optional but highly recommended. You'll include one interesting insight from your project as part of the README. This insight is most effective when you include a visual. Keep in mind that this visual must be included as an image file (e.g., JPG, PNG, etc.). You can export plots created with `{ggplot2}` by using the function `ggsave`.
-
-## Data Sources and Acknowledgements
-
-Be sure to list where you got any data used within the project. Be sure to acknowledge any one whose work or elements you're drawing upon.
+- **Airport passenger traffic**: Scraped from Wikipedia's 
+  [List of busiest airports by passenger traffic](https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic) 
+  using the `rvest` package in R
+- **Calcium dataset**: `calcium.csv` — a longitudinal study tracking ulnar calcium 
+  levels in 31 women (15 control, 16 diet/exercise treatment) across four time points
 
 ## Current Plan
 
-Provide some information about what you intend to doe with the project. You can additionally refer the visitor to your detailed plan document.
+### Repository
+- Development work is done on branches and merged into `main` using pull requests
+- Tasks are tracked using GitHub Issues
+- Each commit has a clear message describing the purpose of the change
 
-## Repo Structure
+### Practicing Data Analysis
+- Scrape and wrangle airport passenger data from Wikipedia for 2020–2024
+- Simulate Monte Carlo integration of the Weibull PDF at n = 10, 100, 1000, and 10,000
+- Prompt a GenAI tool using both a detailed plan and a generic prompt, then compare 
+  the outputs
 
-Use this section to explain the structure of your repo. This should help visitors quickly figure out where they should look to find certain elements. Further, you can use this space to highlight and briefly explain important/key files in the repo.
+## Repository Organization 
+- HW4_3.qmd          # Quarto source file — run this to reproduce all results
+- HW4_3.pdf          # Rendered PDF output
+- calcium.csv        # Dataset for the GenAI prompting section
+- README.md          # This file
 
-
-## Authors
-
-Give information about who are the authors of the project and how people can get in touch if they have questions.
+## Contact Information
+**Robert Dang**  
+STAT 184, Penn State University, rkd5479@psu.edu
