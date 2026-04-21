@@ -23,9 +23,13 @@ This report shows a reproducible data analysis using Quarto. This means that all
 In this section, we look at passenger traffic for six major airports over several years. We want to see how post-pandemic air travel recovered at some of the busiest airports.
 
 ```{r}
+#| label: airports-data-and-vizualization
 #| echo: false
 #| warning: false
 #| message: false
+#| tbl-cap: "Passenger Traffic at Six Major International Airports (millions, 2020–2024)"
+#| fig-cap: "Line chart showing passenger traffic recovery at six major international airports from 2020 to 2024."
+#| fig-alt: "Line chart with one colored line per airport showing passenger counts in millions from 2020 to 2024. Atlanta leads throughout. Dubai shows the steepest recovery."
 
 library(tidyverse)
 library(rvest)
@@ -166,9 +170,12 @@ Together, the table and line chart reveal the miraculous recovery of global air 
 # Monte Carlo Simulation 
 
 ```{r}
+#| label: monte-carlo-combined
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-cap: "Monte Carlo integration of the Weibull PDF at four sample sizes displayed as a 2x2 grid."
+#| fig-alt: "Four scatterplots arranged in a 2x2 grid showing Monte Carlo integration estimates at n = 10, 100, 1000, and 10000. Green points fall below the Weibull curve and red points fall above. Estimates converge toward 1.0 as sample size increases."
 
 library(patchwork)
 
@@ -229,9 +236,12 @@ Monte Carlo numerical integration estimates the area under a curve by randomly s
 ## Small Multiple Visualization
 
 ```{r}
+#| label: monte-carlo-small-multiples
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-cap: "Small multiple visualization of Monte Carlo integration across four sample sizes."
+#| fig-alt: "Four scatterplots in a 2x2 grid showing Monte Carlo estimates of the Weibull PDF integral at n = 10, 100, 1000, and 10000. Visual density of points increases with sample size and estimates converge toward 1.0."
 
 library(patchwork)
 
@@ -289,11 +299,14 @@ Before using a GenAI tool, I made a plan:
 
 
 ## Post-prompt visualization 
-
 ```{r}
+#| label: calcium-plot
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-cap: "Ulnar calcium levels measured at four time points for control and diet/exercise groups."
+#| fig-alt: "Line chart showing ulnar calcium levels over four time points for 31 women. Faint lines show individual subjects and bold lines show group means. The diet and exercise group trends slightly higher through Year 2 before declining."
+
 
 # Read and rename columns manually
 calcium_raw <- read_csv(
@@ -368,6 +381,7 @@ Anthropic Claude | Claude Sonnet 4.6(claude.ai)
 **Response from Claude (Sonnet 4.6, April 12th, 2026):**
 
 ```{r}
+#| label: genai-plan-based-response
 #| eval: false
 #| echo: true
 
@@ -445,6 +459,7 @@ If you can share what the groups represent (e.g., treatment vs. control, or diff
 # Appendix: Code
 
 ```{r}
+#| label: appendix-full-code
 #| eval: false
 #| echo: true
 #| results: hide
