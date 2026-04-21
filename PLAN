@@ -1,0 +1,75 @@
+# Project Plan
+
+## 1. Analysis Plan
+
+### Goal
+Produce a fully reproducible data analysis report in Quarto covering 
+post-pandemic airport passenger traffic, Monte Carlo integration, and a comparison 
+of GenAI prompting strategies.
+
+### Needs
+
+**Nouns**
+- R and RStudio with Quarto installed
+- Packages: tidyverse, rvest, knitr, kableExtra, patchwork
+- Wikipedia page for airport passenger traffic data
+- calcium.csv dataset for the GenAI prompting section
+- GenAI tool (Anthropic Claude)
+
+**Verbs**
+- Web scraping with rvest
+- Data wrangling and reshaping with tidyverse
+- Plotting with ggplot2
+- Running and interpreting simulations
+- Prompting a GenAI tool effectively and documenting the process
+
+### Steps
+1. Scrape airport passenger traffic data from Wikipedia for 2020–2024 using rvest
+2. Wrangle and filter data to six selected airports 
+3. Pivot to wide format for the table
+4. Build a line chart of passenger traffic over time using ggplot2
+5. Write a Monte Carlo simulation to estimate the integral of the Weibull PDF 
+   (shape = 1.5, scale = 1) over [0, 4] at n = 10, 100, 1000, and 10,000
+6. Display results as a 2x2 small multiples plot using patchwork
+7. Read and tidy calcium.csv
+8. Pivot to long format and bind control and treatment groups
+9. Prompt a GenAI tool using a detailed plan-based prompt and a generic prompt
+10. Compare the outputs and document findings in the report
+11. Render the final QMD to a PDF and verify all results are reproducible
+
+---
+
+## 2. Repository Plan
+
+### Goal
+Maintain a clean, well-documented public GitHub repo that tracks the full development 
+history of HW 4.3 using branching, issues, and pull requests.
+
+### Needs
+
+**Nouns**
+- A public GitHub repository
+- GitHub Desktop for committing and branch management
+- RStudio for editing files
+- At least two branches (main + one feature branch)
+- At least two GitHub Issues
+
+**Verbs**
+- Creating and cloning a GitHub repository
+- Branching and merging in GitHub Desktop
+- Writing clear and descriptive commit messages
+- Opening, referencing, and closing GitHub Issues
+- Creating and merging pull requests with titles and descriptions
+
+### Steps
+1. Create a public repo on GitHub with an initialized README
+2. Clone the repo locally using GitHub Desktop
+3. Open the project in RStudio and complete the README with project details and plan
+4. Commit the updated README to main with a descriptive commit message
+5. Create a feature branch called Add-HW-Files for adding deliverables
+6. Add HW4_3.qmd, HW4_3.pdf, calcium.csv, and PLAN.txt to the feature branch
+7. Write a descriptive commit message for each file addition
+8. Open and solve two GitHub Issues to track tasks before merging
+9. Open a pull request from Add-HW-Files into main with a title and description
+10. Reference and close both issues in the pull request description
+11. Merge the pull request into main
