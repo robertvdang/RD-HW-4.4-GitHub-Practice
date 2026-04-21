@@ -33,10 +33,11 @@ comparison of plan-based vs. generic GenAI prompting to produce data visualizati
   the outputs
 
 ## Repo Structure 
-- HW4_3.qmd          # Quarto source file — run this to reproduce all results
-- HW4_3.pdf          # Rendered PDF output
-- calcium.csv        # Dataset for the GenAI prompting section
-- README.md          # This file
+- HW4.3.qmd           # Quarto source file — run this to reproduce all results
+- HW 4.3 Visual.pdf   # Rendered PDF output
+- PLAN.txt            # Text file containing the plan for this repo
+- calcium.csv         # Dataset for the GenAI prompting section
+- README.md           # This file
 
 ## Authors
 **Robert Dang**  
