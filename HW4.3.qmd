@@ -299,6 +299,7 @@ Before using a GenAI tool, I made a plan:
 
 
 ## Post-prompt visualization 
+
 ```{r}
 #| label: calcium-plot
 #| echo: false
