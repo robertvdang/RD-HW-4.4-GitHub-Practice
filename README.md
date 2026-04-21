@@ -3,7 +3,7 @@
 A reproducible data analysis report built with Quarto covering post-pandemic airport 
 traffic recovery, Monte Carlo integration, and GenAI prompting strategies.
 
-## About This Project
+## Overview
 
 This repo contains the work from HW 4.3 for STAT 184 at Penn State. The report demonstrates 
 reproducible data analysis using Quarto and R across three sections: an analysis of 
@@ -11,7 +11,7 @@ passenger traffic recovery at six major international airports from 2020–2024,
 Carlo numerical integration of the Weibull probability density function, and a 
 comparison of plan-based vs. generic GenAI prompting to produce data visualizations. 
 
-## Data Sources
+## Data Sources and Acknowledgements
 
 - **Airport passenger traffic**: Scraped from Wikipedia's 
   [List of busiest airports by passenger traffic](https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic) 
@@ -32,12 +32,12 @@ comparison of plan-based vs. generic GenAI prompting to produce data visualizati
 - Prompt a GenAI tool using both a detailed plan and a generic prompt, then compare 
   the outputs
 
-## Repository Organization 
+## Repo Structure 
 - HW4_3.qmd          # Quarto source file — run this to reproduce all results
 - HW4_3.pdf          # Rendered PDF output
 - calcium.csv        # Dataset for the GenAI prompting section
 - README.md          # This file
 
-## Contact Information
+## Authors
 **Robert Dang**  
 STAT 184, Penn State University, rkd5479@psu.edu
