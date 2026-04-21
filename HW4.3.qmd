@@ -161,9 +161,9 @@ airports_table
 airports_plot
 ```
 
-*Together, the table and line chart reveal the miraculous recovery of global air travel following the COVID-19 pandemic. Heathrow (LHR) has no 2021 data, while Beijing Daxing (PKX) is missing 2020, 2022 and 2023 entirely due to complete shutdowns caused by the pandemic. When LHR opened up in 2022, it reached 61.6 million passengers, with steady increases in the next few years. In 2021, PKX only had 25.1 million passengers, but reached almost double that amount with 49.4 million when it opened back up in 2024. Dubai (DXB) shows the most dramatic rebound, tripling from 29.1 million in 2021 to 87.0 million by 2023, further showing how quickly airline travel recovered. The line chart makes this surge apparent, with Dubai's line crossing above Dallas and Heathrow by 2023. By 2024, most airports saw steady increases instead of drastic ones, suggesting that air traffic is stabilizing instead of still recovering. Overall, both visualizations reinforce that recovery speed depended heavily on government policy and airport type, along with passenger demand.*
+Together, the table and line chart reveal the miraculous recovery of global air travel following the COVID-19 pandemic. Heathrow (LHR) has no 2021 data, while Beijing Daxing (PKX) is missing 2020, 2022 and 2023 entirely due to complete shutdowns caused by the pandemic. When LHR opened up in 2022, it reached 61.6 million passengers, with steady increases in the next few years. In 2021, PKX only had 25.1 million passengers, but reached almost double that amount with 49.4 million when it opened back up in 2024. Dubai (DXB) shows the most dramatic rebound, tripling from 29.1 million in 2021 to 87.0 million by 2023, further showing how quickly airline travel recovered. The line chart makes this surge apparent, with Dubai's line crossing above Dallas and Heathrow by 2023. By 2024, most airports saw steady increases instead of drastic ones, suggesting that air traffic is stabilizing instead of still recovering. Overall, both visualizations reinforce that recovery speed depended heavily on government policy and airport type, along with passenger demand.
 
-# ── Monte Carlo Simulation 
+# Monte Carlo Simulation 
 
 ```{r}
 #| echo: false
@@ -224,7 +224,7 @@ print(combined)
 
 ```
 
-*Monte Carlo numerical integration estimates the area under a curve by randomly scattering points across a rectangular bounding box and recording what fraction of them land below the function. That fraction is multiplied by the total area of the rectangle and gives an estimate of the integral. As more points are used, the rectangle gets covered more densely which makes the estimate more reliable. In this analysis, the function being integrated is the Weibull probability density function with shape = 1.5 and scale = 1. When evaluated over the interval \[0, 4\] within a bounding box of 0 to 0.8 on the y-axis, the estimated area is 4 x 0.8 = 3.2.*
+Monte Carlo numerical integration estimates the area under a curve by randomly scattering points across a rectangular bounding box and recording what fraction of them land below the function. That fraction is multiplied by the total area of the rectangle and gives an estimate of the integral. As more points are used, the rectangle gets covered more densely which makes the estimate more reliable. In this analysis, the function being integrated is the Weibull probability density function with shape = 1.5 and scale = 1. When evaluated over the interval \[0, 4\] within a bounding box of 0 to 0.8 on the y-axis, the estimated area is 4 x 0.8 = 3.2.
 
 ## Small Multiple Visualization
 
@@ -269,23 +269,23 @@ mc_plot_10000 <- make_mc_plot(10000)
 
 ```
 
-*The series of small multiples shows Monte Carlo numerical integration of the Weibull probability density function (shape = 1.5, scale = 1) over the interval \[0, 4\] in four scenarios. The sample size dramatically affects the visual clarity and accuracy of each estimate. At n = 10, the estimate of 0.64 is highly inaccurate, with the random sample placing most points above the curve, misrepresenting the true proportion. At n = 100, the estimate increases to 0.736, and by n = 1000 and n = 10000, the estimates stabilize at 0.9728 and 1.0067 Based on this convergence pattern, I believe the exact answer to the integration is 1.0. The Weibull function is a valid probability density function, meaning its total area must integrate to exactly 1 over the range 0 to infinity. The bounds of 0 to 4 capture nearly all of this area since the curve is near zero before x = 4 in all four panels. Also, by n = 10000, the curve is filled with red and green points, meaning the sample size is adequate and the estimate of 1.0067 provides strong evidence that the true answer is exactly 1. *
+The series of small multiples shows Monte Carlo numerical integration of the Weibull probability density function (shape = 1.5, scale = 1) over the interval \[0, 4\] in four scenarios. The sample size dramatically affects the visual clarity and accuracy of each estimate. At n = 10, the estimate of 0.64 is highly inaccurate, with the random sample placing most points above the curve, misrepresenting the true proportion. At n = 100, the estimate increases to 0.736, and by n = 1000 and n = 10000, the estimates stabilize at 0.9728 and 1.0067. Based on this convergence pattern, I believe the exact answer to the integration is 1.0. The Weibull function is a valid probability density function, meaning its total area must integrate to exactly 1 over the range 0 to infinity. The bounds of 0 to 4 capture nearly all of this area since the curve is near zero before x = 4 in all four panels. Also, by n = 10000, the curve is filled with red and green points, meaning the sample size is adequate and the estimate of 1.0067 provides strong evidence that the true answer is exactly 1. 
 
 # Planning and Prompting GenAI Tools
 
 ## New Data Context
 
-*This dataset comes from a longitudinal study that followed 31 women over four years. At the start of the study, researchers measured the amount of calcium in the ulna of each woman's dominant arm using photon absorptiometry. For the study, the null group was made up of 15 women who received no special treatment, while the remaining 16 women followed a structured diet and exercise program and were the treatment group. Each woman had her ulnar calcium level measured once per year across four time points (an initial measurement and the next three years that followed).*
+This dataset comes from a longitudinal study that followed 31 women over four years. At the start of the study, researchers measured the amount of calcium in the ulna of each woman's dominant arm using photon absorptiometry. For the study, the null group was made up of 15 women who received no special treatment, while the remaining 16 women followed a structured diet and exercise program and were the treatment group. Each woman had her ulnar calcium level measured once per year across four time points (an initial measurement and the next three years that followed).
 
 ## Plan
 
 Before using a GenAI tool, I made a plan:
 
-**Goal:** *Create a visualization that shows how ulnar calcium levels change over four years for each treatment group, allowing for comparisons of the trajectory of the null treatment group against the diet/exercise group.*
+**Goal:** Create a visualization that shows how ulnar calcium levels change over four years for each treatment group, allowing for comparisons of the trajectory of the null treatment group against the diet/exercise group.
 
-**Tidying steps:** *1. Read in the CSV and manually assign proper column names. 2. Name the first four columns null_y0, null_y1, null_y2, null_y3 and the last four diet_y0, diet_y1, diet_y2, diet_y3. 3. Add a subject ID column to track each woman across time points. 4. Separate the null group columns and the diet/exercise group columns into two data frames. 5. Add a group column to each. 6. Pivot each data frame from wide to long format so the four time point columns become two columns (time and calcium). 7. Stack the two long data frames together using bind_rows() into one single tidy data frame.*
+**Tidying steps:** 1. Read in the CSV and manually assign proper column names. 2. Name the first four columns null_y0, null_y1, null_y2, null_y3 and the last four diet_y0, diet_y1, diet_y2, diet_y3. 3. Add a subject ID column to track each woman across time points. 4. Separate the null group columns and the diet/exercise group columns into two data frames. 5. Add a group column to each. 6. Pivot each data frame from wide to long format so the four time point columns become two columns (time and calcium). 7. Stack the two long data frames together using bind_rows() into one single tidy data frame.
 
-**Wrangling steps:** *1. Convert time to an ordered factor so the x-axis plots in the correct sequence (Initial, Year 1, Year 2, Year 3). 2. Group by time and group. 3. Calculate the mean calcium level per group per time point to summarize across all subjects.*
+**Wrangling steps:** 1. Convert time to an ordered factor so the x-axis plots in the correct sequence (Initial, Year 1, Year 2, Year 3). 2. Group by time and group. 3. Calculate the mean calcium level per group per time point to summarize across all subjects.
 
 
 ## Post-prompt visualization 
@@ -345,24 +345,25 @@ ggplot() +
   theme(legend.position = "bottom")
 ```
 
+The visualization shows each woman's ulnar calcium trajectory as a faint individual line, with an overlay of bold lines to represent the group means. Both groups begin at similar calcium levels, then end at nearly identical levels. The individual lines reveal considerable variation within each group, suggesting that personal factors beyond treatment assignment also influence calcium retention over time.
 
 ## Comparison
 
-*The plan‑based prompt produced complete, ready‑to‑run R code that tidied the data exactly as specified. It also generated a clear ggplot visualization that combined thin individual subject trajectories with bold group mean lines, directly aligning with the  goals I gave it. The code required minimal revisions and immediately answered the research question. In contrast, the generic prompt led Claude to provide no actual code. Instead, it gave a descriptive narrative accompanied by two static visualizations(provided in Appendix), one summarizing group means across time and the other displaying individual subject patterns. Although these plots were informative, they were not reproducible and could not be directly modified or extended. This demonstrates that vague prompts tend to yield descriptive outputs chosen by the AI, whereas a structured plan can reliably produce specific and reproducible code that's suitable for formal data analysis.*
+The plan‑based prompt produced complete, ready‑to‑run R code that tidied the data exactly as specified. It also generated a clear ggplot visualization that combined thin individual subject trajectories with bold group mean lines, directly aligning with the  goals I gave it. The code required minimal revisions and immediately answered the research question. In contrast, the generic prompt led Claude to provide no actual code. Instead, it gave a descriptive narrative accompanied by two static visualizations(provided in Appendix), one summarizing group means across time and the other displaying individual subject patterns. Although these plots were informative, they were not reproducible and could not be directly modified or extended. This demonstrates that vague prompts tend to yield descriptive outputs chosen by the AI, whereas a structured plan can reliably produce specific and reproducible code that's suitable for formal data analysis.
 
 # Reflection
 
-*Overall, taking STAT 184 has reshaped how I approach data analysis by emphasizing reproducibility and clarity. It also taught me the importance of planning as lengthy projects require more in-depth thinking to make sure they're successful. Before the course, I had no experience with data wrangling or tidying. This is an extremely useful skill that I've gotten to practice, especially during the airport project. Here I needed clear naming, commenting, and structure to make the work easy to understand. Learning tidyverse was also valuable, with tools like pivot_longer(), group_by(), and mutate(), making data wrangling more intuitive. Lastly, the Monte Carlo integration was vital because it showed how simulations and larger sample sizes can give abstract ideas applications in the real world.*
+Overall, taking STAT 184 has reshaped how I approach data analysis by emphasizing reproducibility and clarity. It also taught me the importance of planning as lengthy projects require more in-depth thinking to make sure they're successful. Before the course, I had no experience with data wrangling or tidying. This is an extremely useful skill that I've gotten to practice, especially during the airport project. Here I needed clear naming, commenting, and structure to make the work easy to understand. Learning tidyverse was also valuable, with tools like pivot_longer(), group_by(), and mutate(), making data wrangling more intuitive. Lastly, the Monte Carlo integration was vital because it showed how simulations and larger sample sizes can give abstract ideas applications in the real world.
 
 # Appendix: GenAI Usage
 
 ## Tool Used
 
-*Anthropic Claude | Claude Sonnet 4.6(claude.ai)*
+Anthropic Claude | Claude Sonnet 4.6(claude.ai)
 
 ## Usage 1: Plan-based prompt
 
-*"I have a CSV file called calcium.csv from a longitudinal study of 31 women. The file has 8 columns with duplicate headers (y0, y1, y2, y3, y0, y1, y2, y3) — the first four are the control/null group (15 women) and the last four are the diet/exercise group (16 women), measuring ulnar calcium at four time points. Here is my plan: (1) Read the CSV and manually assign column names null_y0 through null_y3 and diet_y0 through diet_y3, skipping the header row. (2) Add a subject ID. (3) Pivot each group to long format, add a group column, and bind_rows() them together. (4) Convert time to an ordered factor with labels Initial, Year 1, Year 2, Year 3. (5) Compute group means at each time point. (6) Build a ggplot line chart with thin semi-transparent individual lines in the background and bold group mean lines in the foreground, colored by group. Write the full R tidyverse code following this plan"*
+"I have a CSV file called calcium.csv from a longitudinal study of 31 women. The file has 8 columns with duplicate headers (y0, y1, y2, y3, y0, y1, y2, y3) — the first four are the control/null group (15 women) and the last four are the diet/exercise group (16 women), measuring ulnar calcium at four time points. Here is my plan: (1) Read the CSV and manually assign column names null_y0 through null_y3 and diet_y0 through diet_y3, skipping the header row. (2) Add a subject ID. (3) Pivot each group to long format, add a group column, and bind_rows() them together. (4) Convert time to an ordered factor with labels Initial, Year 1, Year 2, Year 3. (5) Compute group means at each time point. (6) Build a ggplot line chart with thin semi-transparent individual lines in the background and bold group mean lines in the foreground, colored by group. Write the full R tidyverse code following this plan"
 
 **Response from Claude (Sonnet 4.6, April 12th, 2026):**
 
@@ -422,7 +423,7 @@ ggplot() +
 
 ## Usage 2: Generic prompt
 
-*"Create a data visualization that will help me understand these data. Calclium.csv"*
+"Create a data visualization that will help me understand these data. Calclium.csv"
 
 **Response from Claude (Sonnet 4.6, March 31, 2026):**
 
